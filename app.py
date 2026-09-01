@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 
 st.title("Calculadora de Gasto de Combustível")
@@ -15,9 +16,9 @@ if st.button("Calcular Gasto"):
     litros_necessarios = distancia / consumo_km_l
     custo_total = litros_necessarios * preco_litro
 
-
-    st.capti
-
     st.subheader("Resumo da Viagem")
-    st.info(f"**Combustível necessário:** {litros_necessarios:.2f} litros")
+    st.success(f"**Combustível necessário:** {litros_necessarios:.2f} litros")
     st.success(f"**Custo total estimado:** R$ {custo_total:.2f}")
+    st.caption("""calculo:""")
+    st.caption("""Distância dividida pelo consumo do veiculo = a quantidade de gasolina/alcool necessário.""")
+    st.caption("""Litros necessários vezes o preço do combustivel = o custo total em reais.""")
